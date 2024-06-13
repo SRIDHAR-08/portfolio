@@ -83,8 +83,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-SESSION_COOKIE_SECURE = False  # Set to True if using HTTPS
-CSRF_COOKIE_SECURE = False     # Set to True if using HTTPS
 
 
 
