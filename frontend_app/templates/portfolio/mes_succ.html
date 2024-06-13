@@ -1,0 +1,38 @@
+{% extends 'portfolio/layout/main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-md-5 fw-bold mt-2 mb-5">
+    <div class="row ">
+        <div class="col  pt-md-5 pt-3 fw-bold mb-2 fixed-bottom">
+            <a href="{% url 'contect' %}" class="download-btn "> SEND ANOTHOR MESSAGE </a>
+        </div>
+        <div class="col  pt-md-5 pt-3 fw-bold mb-2 d-lg-none">
+            <a href="{% url 'portfolio_home' %}" class="download-btn "> Home Page </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col pt-md-5 pt-3 fw-bold">
+            <h3 class="text-danger" >MESSAGE SUCCESSFULLY SEND</h3> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col mt-3" style="color: rgb(0, 0, 255);">Your All message</div>
+
+    </div>
+    {% for contect_data in contect_data %}
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col mt-3" style="color: rgb(255, 0, 200);">{{contect_data.message_send_date}} <span style="color: red;">{{contect_data.message_send_time}}</span></div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col mt-3">{{contect_data.message}}</div>
+    </div>
+
+    {% endfor %}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'e_commerce_home' %}">SHOPING KING</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'e_commerce_home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'e_commerce_register' %}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'e_commerce_category' %}">Catagory</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'e_commerce_Cart' %}">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'e_commerce_favourite' %}">favourite</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-warning" href="{% url 'portfolio_home' %}">Portfolio</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,54 @@
+{% extends 'portfolio/layout/main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-md-5 fw-bold mt-2 mb-5">
+    {% for resume_data in resume_data %}
+    <div class="row">
+        <div class="col-3 pt-md-5 pt-3 fw-bold">
+            <h3 >RESUME</h3> 
+        </div>
+        <div class="col"></div>
+        <div class="col-5 col-md-2 pt-md-5 pt-3 fw-bold mb-2 ">
+            <a href="{{resume_data.resume.url}}" class="download-btn" download> DOWNLOAD RESUME </a>
+        </div>
+    </div>
+    {% if resume_data.resume_photo1 != 'null' %}
+    <div class="row">
+        <div class="col-lg-2 col-1"></div>
+            <div class="col">
+                <img src="{{resume_data.resume_photo1.url}}" class="img-fluid" alt="resume">
+            </div>
+        <div class="col-lg-2 col-1"></div>
+    </div>
+    {% endif %}
+    {% if resume_data.resume_photo2 != 'null' %}
+    <div class="row">
+        <div class="col-lg-2 col-1"></div>
+            <div class="col">
+                <img src="{{resume_data.resume_photo2.url}}" class="img-fluid" alt="resume">
+            </div>
+        <div class="col-lg-2 col-1"></div>
+    </div>
+    {% endif %}
+    {% if resume_data.resume_photo3 != 'null' %}
+    <div class="row">
+        <div class="col-lg-2 col-1"></div>
+            <div class="col">
+                <img src="{{resume_data.resume_photo3.url}}" class="img-fluid" alt="resume">
+            </div>
+        <div class="col-lg-2 col-1"></div>
+    </div>
+    {% endif %}
+    {% if resume_data.resume_photo4 != 'null' %}
+    <div class="row">
+        <div class="col-lg-2 col-1"></div>
+            <div class="col">
+                <img src="{{resume_data.resume_photo4.url}}" class="img-fluid" alt="resume">
+            </div>
+        <div class="col-lg-2 col-1"></div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

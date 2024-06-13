@@ -1,0 +1,94 @@
+{% extends 'portfolio/layout/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-md-5">
+  <div class="row">
+    <div class="col pt-md-5 pt-3 fw-bold">
+      <h3>LIST OF ALL PROJECT</h3>
+    </div>
+    {% for project_data in project_data %}
+    <div class="row">
+      <div class="col mt-2 fw-bold">
+        <span class="bg-dark textcl p-2">NO : {{ forloop.counter }}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-12 col-md-8 mt-2 fw-bold fs-3 text-warning">
+        <span class="bg-dark px-2 pb-1">{{ project_data.project_name_w_p }}</span>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-lg-1"></div>
+      <div class="col-12 col-md-8 col-lg-6 mt-2">
+        <img src="{{ project_data.project_img.url }}" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-1 col-lg-2"></div>
+      <div class="col col-md-3 fw-bold PROnamecolor mt-3 mt-md-0 media-lan1">USING LANGUAGE
+        <div class="row media-lan">
+          <div class="col-8">
+            <ul class="ms-4 list_lan fw-bold mt-2">
+              {% if project_data.language1 != 'null' %}
+              <li>{{ project_data.language1 }}</li>
+              {% endif %}
+              {% if project_data.language2 != 'null' %}
+              <li>{{ project_data.language2 }}</li>
+              {% endif %}
+              {% if project_data.language3 != 'null' %}
+              <li>{{ project_data.language3 }}</li>
+              {% endif %}
+              {% if project_data.language4 != 'null' %}
+              <li>{{ project_data.language4 }}</li>
+              {% endif %}
+              {% if project_data.language5 != 'null' %}
+              <li>{{ project_data.language5 }}</li>
+              {% endif %}
+              {% if project_data.language6 != 'null' %}
+              <li>{{ project_data.language6 }}</li>
+              {% endif %}
+              {% if project_data.language7 != 'null' %}
+              <li>{{ project_data.language7 }}</li>
+              {% endif %}
+              {% if project_data.language8 != 'null' %}
+              <li>{{ project_data.language8 }}</li>
+              {% endif %}
+            </ul>
+          </div>
+          <div class="col-4 d-md-none">
+            <div class="row">
+              <div class=""><a href="{% url project_data.url_name_project %}"><button class="btn backbt p-sm-4"> VIEW  PROJECT</button></a></div>
+              <div class="mt-5 "><button class="btn backbt1 px-sm-4">PROJECT DETAILS</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container  d-md-block d-none mt-xl-3 mt-md-2 mt-lg-1">
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-3"><a href="{% url project_data.url_name_project %}"><button class="btn backbt me-3">VIEW PROJECT</button> </a></div>
+      <div class="col-3">
+        <a href="{% url 'project_details' project_data.id %}"><button class="btn backbt ">PROJECT DETAILS</button></a></div>
+    </div>
+  </div>
+  <div class="container mt-2">
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col"><h2>{{ project_data.project_name }}</h2></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div class="col"><p style="color: rgb(238, 0, 0); font-size: 20px;">{{ project_data.project_description }}</p></div>
+    </div>
+  </div>
+
+  <hr class="bg-primary">
+
+  {% endfor %}
+{% endblock content %}

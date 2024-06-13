@@ -1,0 +1,97 @@
+{% extends 'portfolio/layout/main.html' %}
+{% load static %}
+
+{% block content %}
+  {% for data in data %}
+    <div class="container mt-md-5">
+      <div class="row">
+        <div class="col-8 pt-3">
+          <div class="container">
+            <div class="row">
+              <div class="col fs-1 fw-bold namecolor">{{ data.name }}</div>              
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-1"></div>
+                  <div class="col fcol text-dark fw-bold">{{ data.Roll }}<span class="text-danger">({{ data.experience }})</span></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-1"></div>
+                  <div class="col fcol mt-3 fw-bold">{{ data.description }}</div>
+                </div>
+                <div class="row">
+                  <div class="container fw-bold">
+                    <div class="row">
+                      <div class="col text-dark fw-bold fs-2 mt-md-2 mt-4">EDUCATION</div>
+                    </div>
+                    <div class="row">
+                      <div class="col mt-3 course">{{ data.course }} <span class="year px-1">{{ data.course_year }}</span></div>
+                    </div>
+                    <div class="row d-none d-md-block">
+                      <div class="col-md-2"></div>
+                      <div class="col mt-3 course">{{ data.collage_degree }}<span class="year px-1">{{ data.collage_year }}</span></div>
+                    </div>
+                    <div class="row d-md-none">
+                      <div class="col-md-4"></div>
+                      <div class="col mt-3 course">{{ data.collage_degree_s }} <span class="year px-1">{{ data.collage_year }}</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-3 mt-5">  
+          <figure>
+            <img src="{{ data.profile_image.url }}" alt="" class="img-fluid">
+            <figcaption class="figure-caption text-start d-sm-none">
+              <div class="col text-dark text-center fw-bold fs-2 mt-md-2 mt-4">SKILLS</div>
+              {% for skill in skill %}
+                <div class="col"><img src="{{ skill.skill_image.url }}" alt=""  class="img-fluid"></div>
+              {% endfor %}
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+  <!-- Skill -->
+  <div class="container d-sm-block d-none">
+    <div class="row">
+      <div class="col text-dark fw-bold fs-2 mt-md-2 mt-4">SKILLS</div>
+    </div>
+    <div class="row">
+      {% for skill2 in skill %}
+        <div class="col"><img src="{{ skill2.skill_image.url }}" alt=""  class="img-fluid"></div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+  <!-- Skill End -->
+  {% comment %} Project {% endcomment %}
+  <div class="container">
+    <div class="row">
+      <div class="col text-dark fw-bold fs-2 mt-md-2 mt-4">PROJECT</div>
+    </div>
+  </div>
+  {% for project_data in project_data %}
+    <div class="container">
+      <div class="row">
+        <div class="col-3 fw-bold mt-3">No-{{ forloop.counter }}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-lg-4 mt-3 col-md-6"><img src="{{ project_data.project_img.url }}" class="img-fluid img-thumbnail border border-primary border-2" alt=""></div>
+        <div class="col-lg-6 col mt-3 text-primary fw-bold">{{ project_data.project_name }}
+          <div class="row">
+            <div class="col ms-3 text-dark"><p>{{ project_data.project_description }}</p></div>
+          </div>
+          <div class="row g-5">
+            <div class="col-3 col-sm-4"><a href="{% url project_data.url_name_project %}"><button class="btn backbt">VIEW PROJECT</button></a></div>
+            <div class="col-6"><a href="{% url 'project_details' project_data.id %}"><button class="btn backbt">VIEW PROJECT DETAILS</button></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  {% comment %} Project https://www.youtube.com/watch?v=m_ypkWAiAGcEnd {% endcomment %}
+{% endblock content %}

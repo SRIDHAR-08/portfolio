@@ -1,0 +1,81 @@
+body{
+    /* background-color:radial-gradient(#b2c972, #9198e5); */
+    background: radial-gradient(closest-side, #ffffff, #dffbff, #a6e6ff);
+    
+    
+}
+.namecolor{
+    color: rgb(63, 60, 231);
+}
+.fcol{
+    color: #250456;
+}
+.year{
+    background-color: aqua;
+    color: rgb(0, 0, 0);
+}
+.course 
+{
+    color: rgb(2, 129, 60);
+ 
+}
+.backbt{
+
+    background-color: rgb(255, 251, 0);
+
+    font-size: 14px;
+}
+
+.PROnamecolor{
+    color: rgb(255, 38, 0);
+}
+
+.list_lan{
+    color: rgb(0, 26, 255);
+}
+
+@media (min-width: 1200px) {
+    .media-lan {
+        font-size: 26px;
+    }
+  }
+@media (min-width: 992px) {
+    .media-lan1 {
+        font-size: 20px;
+    }
+  }
+@media (min-width: 1200px) {
+    .media-lan1 {
+        font-size: 20px;
+    }
+  }
+
+  .backbt1{
+
+    background-color: rgb(255, 251, 0);
+
+    font-size: 16px;
+}
+
+.textcl{
+    color: rgb(7, 250, 68);
+}
+
+
+.download-btn {
+    display: inline-block;
+    padding: 5px 20px;
+    background-color: #2f00ff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .download-btn:hover {
+    background-color: #fffb00;
+  }
+  
