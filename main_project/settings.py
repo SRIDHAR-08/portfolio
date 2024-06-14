@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-87rme8s!02lwnq#ew-2kb8hipzms*3wb98b*_fday(glsk1=r(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['34.204.17.116']
+ALLOWED_HOSTS = ['*']
 
 
 
@@ -147,7 +147,7 @@ STATICFILES_DIRS = [BASE_DIR,'static']      #css js location    <link rel="style
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ALLOWED_HOSTS = ['127.0.0.1','osprey-fine-finally.ngrok-free.app']
+
 
 TIME_ZONE = 'Asia/Kolkata'
 
