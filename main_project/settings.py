@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'portfolio',
     'frontend_app',
     'e_commerce',
+    'storages',
     
 ]
 
@@ -155,3 +156,13 @@ TIME_ZONE = 'Asia/Kolkata'
 # CORS_ORIGIN_WHITELIST = [
 #     'https://osprey-fine-finally.ngrok-free.app',       #csrf token code
 # ]
+
+
+
+
+
+
+
+
+
+
